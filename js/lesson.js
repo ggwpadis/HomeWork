@@ -17,6 +17,22 @@ phoneButton.addEventListener('click', ()=>{
     }
 })
 
+const phoneInputRU = document.querySelector('#phone_input_ru');
+const phoneButtonRU = document.querySelector('#phone_button_ru');
+const phoneSpanRU = document.querySelector('#phone_result_ru');
+
+const reqExpRU = /^\+7 9\d{2} \d{3}-\d{2}-\d{2}$/;
+
+phoneButtonRU.addEventListener('click', () => {
+    if (reqExpRU.test(phoneInputRU.value)) {
+        phoneSpanRU.innerHTML = 'Этот номер существует';
+        phoneSpanRU.style.color = 'green';
+    } else {
+        phoneSpanRU.innerHTML = 'Этот номер не существует';
+        phoneSpanRU.style.color = 'red';
+    }
+});
+
 
 //TAB SLIDER
 const tabsContentCards = document.querySelectorAll('.tab_content_block');
