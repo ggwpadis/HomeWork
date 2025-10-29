@@ -34,6 +34,8 @@
     padding: 100px 0;
 }
 
+
+/* ----- TAB SLIDER CARS ----- */
 .tab_content_block {
     width: 700px;
     border: 1px solid var(--orange);
@@ -44,7 +46,29 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 170px;
+    height: 350px; /* увеличил под фото */
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: opacity 0.5s ease;
+}
+
+.tab_content_block img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.tab_content_block img:hover {
+    transform: scale(1.05);
+}
+
+.tab_content_block p {
+    color: #ffcc80;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .tab_content_block p {
