@@ -1,8 +1,14 @@
 
 /* PHONE CHECKER */
-
+:root {
+    --neon-pink: #ff0080;
+    --neon-blue: #00ffff;
+    --neon-green: #39ff14;
+    --neon-purple: #bb00ff;
+    --dark-bg: #0b0c2f;
+}
 .phone_block {
-    background: black;
+    background: var(--dark-bg);
     padding: 100px 0;
 }
 
@@ -10,10 +16,11 @@
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid var(--orange);
+    border: 2px solid var(--neon-pink);
     height: 300px;
     border-radius: 20px;
     align-items: center;
+    box-shadow: 0 0 20px var(--neon-pink);
 }
 
 .form_phone {
@@ -30,7 +37,7 @@
 /* TAB SLIDER */
 
 .tab_slider {
-    background: black;
+    background: var(--dark-bg);
     padding: 100px 0;
 }
 
@@ -38,7 +45,7 @@
 /* ----- TAB SLIDER CARS ----- */
 .tab_content_block {
     width: 700px;
-    border: 1px solid var(--orange);
+    border: 2px solid var(--neon-purple);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -46,16 +53,16 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 350px; /* увеличил под фото */
+    height: 350px;
     background-color: rgba(255, 255, 255, 0.05);
-    transition: opacity 0.5s ease;
+    box-shadow: 0 0 20px var(--neon-purple);
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
-
 .tab_content_block img {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+    box-shadow: 0 0 15px var(--neon-pink);
     transition: transform 0.4s ease;
 }
 
@@ -88,7 +95,7 @@
     padding: 10px;
     height: 30px;
     color: white;
-    border: 1px solid var(--orange);
+    border: 2px solid var(--neon-pink);
     text-align: center;
     font-size: 20px;
     cursor: pointer;
@@ -97,10 +104,10 @@
 }
 
 .tab_content_item_active {
-    background: var(--orange);
-    color: black;
+    background: var(--neon-pink);
+    color: var(--dark-bg);
     font-weight: 600;
-    border: 1px solid white;
+    border: 2px solid var(--neon-blue);
 }
 
 .tab_contents_block {
@@ -113,31 +120,42 @@
 /*------CARD SWITCHER------*/
 
 .card_switcher {
-    background-color: black;
+    background-color: #0b0c2f;
     padding: 100px 0;
 }
 
 .card {
     width: 500px;
-    height: 150px;
-    border: 1px solid var(--orange);
+    height: 500px;
+    border: 2px solid #ff00ff;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ff00ff;
+    transition: all 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff00ff;
+    transition: transform 0.4s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
 }
 
 .card p {
-    color: var(--orange);
-    font-size: 20px;
+    color: #ff00ff;
+    font-size: 18px;
 }
 
-.card span {
-    color: white;
-    font-size: 30px;
-}
 
 .inner_card_switcher {
     margin-top: 50px;
@@ -146,13 +164,29 @@
     justify-content: space-between;
 }
 
+.btn {
+    background: #0b0c2f;
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff00ff;
+    color: #0b0c2f;
+}
+
 
 /*-------CONVERTER--------*/
 
 
 .converter {
     padding: 100px 0;
-    background-color: black;
+    background-color: var(--dark-bg);
 }
 
 .inner_converter {
@@ -173,7 +207,7 @@
 
 .weather {
     padding: 100px 0;
-    background-color: black;
+    background-color: var(--dark-bg);
 }
 
 .inner_weather > div {

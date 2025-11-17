@@ -12,6 +12,11 @@ const generateRandomColor = () => {
     return '#' + color
 }
 
+const btn = document.getElementById("btn-get");
+  btn.addEventListener("click", () => {
+    window.location.href = "pages/portfolio.html"; // имя файла страницы
+  });
+
 const setRandomColors = () => {
     buttonsColor.forEach((buttonColor) => {
         buttonColor.innerHTML = generateRandomColor()
