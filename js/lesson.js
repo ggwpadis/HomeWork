@@ -165,31 +165,37 @@ btnNext.addEventListener("click", () => {
 // Инициализация
 updateCard();
 
-const input = document.querySelector(".cityName");
-const citySpan = document.querySelector(".city");
-const tempSpan = document.querySelector(".temp");
 
-const apiKey = "037ddd1608c2da91b90b21f91372e031";
+const cityInput = document.querySelector('.cityName');
+const cityElem = document.querySelector('.city');
+const tempElem = document.querySelector('.temp');
 
-input.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        const city = input.value.trim();
-        if (!city) return;
+const apiKey = '037ddd1608c2da91b90b21f91372e031'; // Вставь сюда свой ключ OpenWeatherMap
 
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ru`;
+async function getWeather(city) {
+    try {
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=ru&appid=${apiKey}`
+        );
+        if (!response.ok) {
+            cityElem.textContent = 'Город не найден';
+            tempElem.textContent = '';
+            return;
+        }
+        const data = await response.json();
+        cityElem.textContent = data.name;
+        tempElem.textContent = `${Math.round(data.main.temp)}°C`;
+    } catch (error) {
+        console.error(error);
+        cityElem.textContent = 'Ошибка запроса';
+        tempElem.textContent = '';
+    }
+}
 
-        fetch(url)
-            .then(response => {
-                if (!response.ok) throw new Error("Город не найден");
-                return response.json();
-            })
-            .then(data => {
-                citySpan.textContent = `Город: ${data.name}, ${data.sys.country}`;
-                tempSpan.textContent = `Температура: ${data.main.temp.toFixed(1)}°C, ${data.weather[0].description}`;
-            })
-            .catch(err => {
-                citySpan.textContent = "Ошибка!";
-                tempSpan.textContent = err.message;
-            });
+// Событие при нажатии Enter
+cityInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        getWeather(cityInput.value);
+        cityInput.value = '';
     }
 });

@@ -26,6 +26,9 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
     box-shadow: 0 0 5px var(--neon-pink), 0 0 20px var(--neon-pink);
+    display: flex;               
+    align-items: center;         
+    justify-content: center;
 }
 
 .btn:hover {

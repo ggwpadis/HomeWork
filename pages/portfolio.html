@@ -4,195 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
-<style>
-    :root {
-        --dark-bg: #0b0c2f;
-        --neon-pink: #ff00ff;
-        --neon-blue: #00ffff;
-        --neon-green: #00ff99;
-        --neon-orange: #ff9900;
-    }
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/core.css">
+<link rel="stylesheet" href="../css/port.css">
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Britannic Bold', sans-serif;
-    }
-
-    body {
-        background: var(--dark-bg);
-        color: white;
-    }
-
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 50px 0;
-    }
-
-    h1, h2, h3 {
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 30px;
-        text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
-    }
-
-    a {
-        text-decoration: none;
-        color: var(--neon-blue);
-        transition: 0.3s;
-    }
-
-    a:hover {
-        color: var(--neon-pink);
-        text-shadow: 0 0 10px var(--neon-pink);
-    }
-
-    /* BUTTON */
-    .btn {
-        display: inline-block;
-        padding: 15px 30px;
-        font-size: 18px;
-        color: var(--neon-orange);
-        border: 2px solid var(--neon-orange);
-        border-radius: 10px;
-        cursor: pointer;
-        background: transparent;
-        transition: 0.3s;
-        text-transform: uppercase;
-        margin-top: 20px;
-    }
-
-    .btn:hover {
-        background: var(--neon-orange);
-        color: #000;
-        box-shadow: 0 0 20px var(--neon-orange), 0 0 40px var(--neon-orange);
-    }
-
-    /* SECTIONS */
-    section {
-        padding: 100px 0;
-    }
-
-    .about, .projects, .contact {
-        border: 2px solid var(--neon-blue);
-        border-radius: 20px;
-        padding: 50px;
-        margin-bottom: 50px;
-        text-align: center;
-        box-shadow: 0 0 20px var(--neon-blue);
-    }
-
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-    }
-
-    .project-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid var(--neon-green);
-        border-radius: 15px;
-        padding: 20px;
-        transition: 0.3s;
-        text-align: center;
-    }
-
-    .project-card img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        box-shadow: 0 0 10px var(--neon-green);
-    }
-
-    .project-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
-    }
-
-    input, textarea {
-        width: 80%;
-        padding: 10px;
-        margin: 10px auto;
-        display: block;
-        border: 2px solid var(--neon-pink);
-        border-radius: 10px;
-        background: transparent;
-        color: white;
-    }
-
-    input:focus, textarea:focus {
-        outline: none;
-        box-shadow: 0 0 10px var(--neon-pink);
-    }
-
-    button.send-btn {
-        background: var(--neon-pink);
-        color: #000;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-        text-transform: uppercase;
-    }
-
-    button.send-btn:hover {
-        box-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
-    }
-</style>
 </head>
 <body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="inner_header">
+                    <a href="../index.html">
+                        <div class="logotype">
+                            <h2>Java<span>Script</span></h2>
+                        </div>
+                    </a>
+                    <ul class="menu">
+                        <li class="menu_link">
+                            <a href="../pages/home_works.html">Home Works</a>
+                        </li>
+                        <li class="menu_link">
+                            <a href="../pages/lessons.html">Lessons</a>
+                        </li>
+                        <li class="menu_link">
+                            <a href="../pages/home_works.html" target="_blank">Send hw</a>
+                        </li>
+                    </ul>
+                    <a href="../pages/portfolio.html" class="btn" id="btn-get">Click me!</a>
 
-<div class="container">
-    <h1>Моё Портфолио</h1>
-</div>
-
-<section class="about">
-    <div class="container">
-        <h2>О себе</h2>
-        <p>Привет! Меня зовут Адис. Я увлечён разработкой сайтов, мобильных приложений и креативными проектами. Моя цель — создавать футуристические, динамичные интерфейсы с уникальным стилем.</p>
-        <button class="btn" onclick="window.location.href='#projects'">Посмотреть проекты</button>
-    </div>
-</section>
-
-<section class="projects" id="projects">
-    <div class="container">
-        <h2>Проекты</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="/images/image.png" alt="Project 1">
-                <h3>Проект 1</h3>
-                <p>Описание проекта, технологии и результат.</p>
-            </div>
-            <div class="project-card">
-                <img src="https://source.unsplash.com/400x200/?game" alt="Project 2">
-                <h3>Проект 2</h3>
-                <p>Описание проекта, технологии и результат.</p>
-            </div>
-            <div class="project-card">
-                <img src="https://source.unsplash.com/400x200/?website" alt="Project 3">
-                <h3>Проект 3</h3>
-                <p>Описание проекта, технологии и результат.</p>
+                </div>
             </div>
         </div>
+        <div class="container">
+             <h1>Моё Портфолио</h1>
+        </div>
+        <section class="about">
+            <div class="container about-flex">
+                <img src="https://image.spletnik.ru/image/2025/11/19/WcEX/original.webp" alt="Моё фото" class="about-photo">
+                <div class="about-text">
+                    <h4>О себе</h4>
+                    <p>Привет! Меня зовут Адис. Я увлечён разработкой сайтов, мобильных приложений и креативными проектами. Моя цель — создавать футуристические, динамичные интерфейсы с уникальным стилем.</p>
+                    <button class="btn-12" onclick="window.location.href='#projects'">Посмотреть проекты</button>
+                </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+            <div class="container">
+                <h4>Проекты</h4>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://static.wikia.nocookie.net/rutube9658/images/a/a6/YoutubeWhiteBack.jpg/revision/latest?cb=20220501135359&path-prefix=ru" alt="Project 1">
+                        <h3>Проект 1</h3>
+                        <p>Описание проекта, технологии и результат.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-3hf4-p-logotip-instagramm-png-10.png" alt="Project 2">
+                        <h3>Проект 2</h3>
+                        <p>Описание проекта, технологии и результат.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://i.ytimg.com/vi/izq7KT7tIxs/maxresdefault.jpg" alt="Project 3">
+                        <h3>Проект 3</h3>
+                        <p>Описание проекта, технологии и результат.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <h4>Контакты</h4>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш email" required>
+                    <textarea rows="5" placeholder="Сообщение"></textarea>
+                    <button type="submit" class="send-btn">Отправить</button>
+                </form>
+            </div>
+        </section>
     </div>
-</section>
-
-<section class="contact">
-    <div class="container">
-        <h2>Контакты</h2>
-        <form>
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="email" placeholder="Ваш email" required>
-            <textarea rows="5" placeholder="Сообщение"></textarea>
-            <button type="submit" class="send-btn">Отправить</button>
-        </form>
-    </div>
-</section>
-
 </body>
 </html>
